@@ -29,10 +29,6 @@ ifeq ($(ARCH)-$(BOARD),arm-oxnas)
 	TARGET_ARCH:=arm_mpcore.oxnas
 endif
 
-ifeq ($(ARCH)-$(CPU_TYPE),mvebu-cortexa9)
-	TARGET_ARCH:=arm_cortex-a9.mvebu-cortexa9
-endif
-
 ifeq ($(ARCH)-$(BOARD),arm-bcm53xx)
 	TARGET_ARCH:=arm_cortex-a9.bcm53xx
 endif
@@ -52,6 +48,12 @@ endif
 ifeq ($(ARCH)-$(BOARD),arm-bcm27xx)
 	TARGET_ARCH:=aarch64_cortex-a53.brcm2708-bcm2710
 endif
+
+#ifeq ($(ARCH)-$(CPU_TYPE),mvebu-cortexa9)
+ifeq ($(ARCH),arm)
+	TARGET_ARCH:=arm_cortex-a9.mvebu-cortexa9
+endif
+
 
 ifeq ($(ARCH)-$(BOARD),mipsel-bcm47xx)
 	TARGET_ARCH:=mipsel_74kc.brcm47xx-mips74k
